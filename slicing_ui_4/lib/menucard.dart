@@ -6,126 +6,154 @@ class MenuCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+      margin: EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+
       decoration: BoxDecoration(
-        color: const Color(0xffE5E5E5),
+        gradient: LinearGradient(
+          colors: [Color(0xffe9f1ff), Color(0xffe0ebff)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
         borderRadius: BorderRadius.circular(25),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.08),
+            blurRadius: 12,
+            offset: Offset(0, 5),
+          ),
+        ],
       ),
+
+    
       child: Column(
         children: [
-          // ===== ROW MENU ICON =====
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // ===== MENU 1 (PAKAI GAMBAR) =====
               Column(
                 children: [
                   Container(
-                    padding: const EdgeInsets.all(12),
+                    padding: EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: const Color(0xff9DBAFF),
+                      color: Color(0xff9DBAFF),
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Image.asset(
-                      "assets/orange-juice.png",
-                      width: 28,
-                      height: 28,
-                    ),
+                    child: Icon(Icons.local_drink, size: 28),
                   ),
-                  const SizedBox(height: 8),
-                  const Text("Minuman", style: TextStyle(fontSize: 14)),
+                  SizedBox(height: 8),
+                  Text(
+                    "Minuman",
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  ),
                 ],
               ),
 
-              // ===== MENU 2 =====
               Column(
                 children: [
                   Container(
-                    padding: const EdgeInsets.all(12),
+                    padding: EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: const Color(0xff9DBAFF),
+                      color: Color(0xff9DBAFF),
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: const Text("🍔", style: TextStyle(fontSize: 28)),
+                    child: Icon(Icons.fastfood, size: 28),
                   ),
-                  const SizedBox(height: 8),
-                  const Text("Makanan", style: TextStyle(fontSize: 14)),
+                  SizedBox(height: 8),
+                  Text(
+                    "Makanan",
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  ),
                 ],
               ),
 
-              // ===== MENU 3 =====
               Column(
                 children: [
                   Container(
-                    padding: const EdgeInsets.all(12),
+                    padding: EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: const Color(0xff9DBAFF),
+                      color: Color(0xff9DBAFF),
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: const Text("🍕", style: TextStyle(fontSize: 28)),
+                    child: Icon(Icons.local_pizza, size: 28),
                   ),
-                  const SizedBox(height: 8),
-                  const Text("Fast Food", style: TextStyle(fontSize: 14)),
+                  SizedBox(height: 8),
+                  Text(
+                    "Fast Food",
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  ),
                 ],
               ),
 
-              // ===== MENU 4 =====
               Column(
                 children: [
                   Container(
-                    padding: const EdgeInsets.all(12),
+                    padding: EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: const Color(0xff9DBAFF),
+                      color: Color(0xff9DBAFF),
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: const Text("🧺", style: TextStyle(fontSize: 28)),
+                    child: Icon(Icons.shopping_cart, size: 28),
                   ),
-                  const SizedBox(height: 8),
-                  const Text("Buah & Sayur", style: TextStyle(fontSize: 14)),
+                  SizedBox(height: 8),
+                  Text(
+                    "Buah & Sayur",
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  ),
                 ],
               ),
 
-              // ===== MENU 5 =====
               Column(
                 children: [
                   Container(
-                    padding: const EdgeInsets.all(12),
+                    padding: EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: const Color(0xff9DBAFF),
+                      color: Color(0xff9DBAFF),
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: const Text("🏪", style: TextStyle(fontSize: 28)),
+                    child: Icon(Icons.restaurant, size: 28),
                   ),
-                  const SizedBox(height: 8),
-                  const Text("Restoran", style: TextStyle(fontSize: 14)),
+                  SizedBox(height: 8),
+                  Text(
+                    "Restoran",
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  ),
                 ],
               ),
             ],
           ),
 
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
 
-          // ===== GARIS PEMISAH =====
-          Container(height: 1, color: Colors.grey.shade400),
+          Container(height: 1, color: Colors.grey.shade400.withOpacity(0.6)),
 
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
 
-          // ===== SALDO + COINS =====
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Row(
                 children: [
-                  Text("💸", style: TextStyle(fontSize: 28)),
+                  Image.asset("assets/wallet.png", width: 28, height: 28),
                   SizedBox(width: 6),
                   Text(
                     "Rp. 500.000",
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff1A2E66),
+                    ),
                   ),
                 ],
               ),
-              Text("0 coins", style: TextStyle(fontSize: 20)),
+              Text(
+                "0 coins",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xff1A2E66),
+                ),
+              ),
             ],
           ),
         ],
