@@ -1,6 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:slicing_ui_4/homepage.dart';
+import 'package:slicing_ui_4/latihan01.dart';
 import 'package:slicing_ui_4/profil.dart';
 import 'package:slicing_ui_4/promo.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       ),
       home: AnimatedSplashScreen(
         splash: Icons.shopping_cart,
-        nextScreen: NavigasiBawah(),
+        nextScreen: Latihan01(),
         splashTransition: SplashTransition.scaleTransition,
         backgroundColor: Colors.white,
 
