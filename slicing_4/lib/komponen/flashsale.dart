@@ -60,7 +60,7 @@ class kontenFl extends StatelessWidget {
       ),
       child: Column(
         children: [
-          SizedBox(width: double.infinity, child: Image.asset("ae.webp")),
+          SizedBox(width: double.infinity, child: Image.asset("profile1.png")),
           Container(
             height: 15,
             margin: EdgeInsets.symmetric(vertical: 10),
