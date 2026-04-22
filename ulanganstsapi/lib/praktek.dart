@@ -45,7 +45,7 @@ class _PraktekState extends State<Praktek> {
           ? Center(child: CircularProgressIndicator())
           : GridView.count(
               crossAxisCount: 2,
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.all(10), 
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
              
@@ -79,7 +79,7 @@ class _PraktekState extends State<Praktek> {
                         Text(
                           item['title'],
                           maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
+                          
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
 
