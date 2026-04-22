@@ -42,56 +42,74 @@ class _PraktekState extends State<Praktek> {
       ),
 
       body: isLoading
-          ?  Center(child: CircularProgressIndicator())
-          : ListView(
+          ? Center(child: CircularProgressIndicator())
+          : GridView.count(
+              crossAxisCount: 2,
+              padding: EdgeInsets.all(10),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+             
+
               children: data.take(10).map((item) {
                 return Card(
-                  margin:  EdgeInsets.symmetric(
-                    horizontal: 15,
-                    vertical: 8,
-                  ),
-                  elevation: 2,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(15),
                   ),
-                  child: ListTile(
-                    leading: ClipRRect(
-                      borderRadius: BorderRadius.circular(5),
-                      child: Image.network(
-                        item['thumbnail'],
-                        width: 60,
-                        height: 60,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                  elevation: 3,
 
-                    title: Text(
-                      item['title'],
-                      style:  TextStyle(fontWeight: FontWeight.bold),
-                    ),
+                  child: Padding(
+                    padding: EdgeInsets.all(8),
 
-                    subtitle: Column(
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                         SizedBox(height: 5),
-                        Text(
-                          "Rating: ${item['rating']} ⭐",
-                          style:  TextStyle(fontSize: 12),
+                        Expanded(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.network(
+                              item['thumbnail'],
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
+
+                        SizedBox(height: 5),
+
+                        Text(
+                          item['title'],
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+
+                        SizedBox(height: 3),
+
+                        Text(
+                          "⭐ ${item['rating']}",
+                          style: TextStyle(fontSize: 12),
+                        ),
+
+                        SizedBox(height: 3),
+
+                        // Harga
                         Text(
                           "Rp ${item['price'] * 15000}",
-                          style:  TextStyle(
+                          style: TextStyle(
                             color: Colors.green,
                             fontWeight: FontWeight.bold,
-                            fontSize: 15,
+                          ),
+                        ),
+
+                        // Stok
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: Text(
+                            "Stok ${item['stock']}",
+                            style: TextStyle(fontSize: 11, color: Colors.grey),
                           ),
                         ),
                       ],
-                    ),
-
-                    trailing: Text(
-                      "Stok: ${item['stock']}",
-                      style:  TextStyle(color: Colors.grey),
                     ),
                   ),
                 );
